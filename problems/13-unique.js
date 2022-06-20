@@ -16,6 +16,14 @@ console.log(unique(['a', 'b', 'c', 'b'])); // ['a', 'b', 'c']
 
 let unique = function(array) {
     // Your code here
+    let ans = array.reduce(function(word, index) {
+        if (word.indexOf(index) < 0) {
+            word.push(index);
+        }
+        return word;
+
+    }, [])
+return ans;
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
@@ -24,4 +32,4 @@ try {
     module.exports = unique;
 } catch (e) {
     module.exports = null;
-}
+}
